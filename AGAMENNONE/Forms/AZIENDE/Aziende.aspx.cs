@@ -11,4 +11,8 @@ public partial class Forms_Default : System.Web.UI.Page
     {
 
     }
+    protected void btnChiudiPopup_Click(object sender, EventArgs e)
+    {
+        griglia.DataBind();
+    }
 }

@@ -16,7 +16,7 @@ public class DATABASE
 
     public DATABASE()
     {
-        conn.ConnectionString = @"Data Source=CLAUDIO_PC\SQLEXPRESS;Initial Catalog=AGAMENNONE;Integrated Security=True;";
+        conn.ConnectionString = @"Data Source=DESKTOP-GR1O3LV\SQLEXPRESS;Initial Catalog=AGAMENNONE;Integrated Security=True;";
         cmd.Connection = conn;
     }
 

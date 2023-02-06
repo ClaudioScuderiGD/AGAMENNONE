@@ -1,7 +1,7 @@
 .navbar-vertical {
     background-color: #f8f9fa;
     height: 100%;
-    width: 15%;
+    width: 10%;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,23 +9,41 @@
     padding-top: 20px;
 }
 
-.navbar-vertical a {
+    .navbar-vertical a {
         padding: 6px 8px 6px 16px;
         text-decoration: none;
         font-size: 14px;
         color: #818181;
         display: block;
-}
+    }
 
-.navbar-vertical a:hover {
-    color: #f1f1f1;
-    background-color: #007bff;
-}
+        .navbar-vertical a:hover {
+            color: #f1f1f1;
+            background-color: #007bff;
+        }
 
 .spazioiniziale {
-    margin-left:20%;
+    margin-left: 20%;
 }
 
-.spazio {
-    
+.Background {
+    background-color: Black;
+    filter: alpha(opacity=30);
+    opacity: 0.3;
 }
+
+.Popup {
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 50%;
+    height: 520px;
+}
+
+eng {
+    height: 670px;
+}
+
