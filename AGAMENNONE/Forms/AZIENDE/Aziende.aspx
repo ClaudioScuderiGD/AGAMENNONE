@@ -82,9 +82,9 @@
                     Style="display: none">
 
                     <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-                    <iframe style="width: 98%; height: 490px;" id="Iframe1" src="/Forms/AZIENDE/ModificaAzienda.aspx" runat="server"></iframe>
+                    <iframe style="width: 98%; height: 388px;" id="Iframe1" src="/Forms/AZIENDE/ModificaAzienda.aspx" runat="server"></iframe>
                     <br />
-                    <asp:Button ID="Button2" class="text-center" Style="width: 30%; height: 20px;" runat="server" Text="Chiudi" OnClick="btnChiudiPopup_Click" />
+                    <asp:Button ID="Button2" class="text-center" Style="width: 30%; height: 30px;" runat="server" Text="Chiudi" OnClick="btnChiudiPopup_Click" />
                     <%--chiude il popup--%>
                 </asp:Panel>
 
