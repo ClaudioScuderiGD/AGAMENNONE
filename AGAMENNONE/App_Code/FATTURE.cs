@@ -23,89 +23,89 @@ public class FATTURE
 
     public void Insert()
     {
-        DATABASE DB = new DATABASE();
-        DB.query = "FATTURE_Insert";
-        DB.cmd.Parameters.AddWithValue("chiaveCommessa", chiaveCommessa);
-        DB.cmd.Parameters.AddWithValue("numerofattura", numerofattura);
-        DB.cmd.Parameters.AddWithValue("datafattura", datafattura);
-        DB.cmd.Parameters.AddWithValue("importo", importo);
-        DB.cmd.Parameters.AddWithValue("aliquota", aliquota);
-        DB.cmd.Parameters.AddWithValue("descrizione", descrizione);
-        DB.cmd.Parameters.AddWithValue("datasaldo", datasaldo);
-        DB.EseguiSPNonRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "FATTURE_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveCommessa", chiaveCommessa);
+        DATABASE.cmd.Parameters.AddWithValue("numerofattura", numerofattura);
+        DATABASE.cmd.Parameters.AddWithValue("datafattura", datafattura);
+        DATABASE.cmd.Parameters.AddWithValue("importo", importo);
+        DATABASE.cmd.Parameters.AddWithValue("aliquota", aliquota);
+        DATABASE.cmd.Parameters.AddWithValue("descrizione", descrizione);
+        DATABASE.cmd.Parameters.AddWithValue("datasaldo", datasaldo);
+        DATABASE.EseguiSPNonRead();
     }
 
     public void Update()
     {
-        DATABASE DB = new DATABASE();
-        DB.query = "FATTURE_Update";
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
-        DB.cmd.Parameters.AddWithValue("numerofattura", numerofattura);
-        DB.cmd.Parameters.AddWithValue("datafattura", datafattura);
-        DB.cmd.Parameters.AddWithValue("importo", importo);
-        DB.cmd.Parameters.AddWithValue("aliquota", aliquota);
-        DB.cmd.Parameters.AddWithValue("descrizione", descrizione);
-        DB.cmd.Parameters.AddWithValue("datasaldo", datasaldo);
-        DB.EseguiSPNonRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "FATTURE_Update";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
+        DATABASE.cmd.Parameters.AddWithValue("numerofattura", numerofattura);
+        DATABASE.cmd.Parameters.AddWithValue("datafattura", datafattura);
+        DATABASE.cmd.Parameters.AddWithValue("importo", importo);
+        DATABASE.cmd.Parameters.AddWithValue("aliquota", aliquota);
+        DATABASE.cmd.Parameters.AddWithValue("descrizione", descrizione);
+        DATABASE.cmd.Parameters.AddWithValue("datasaldo", datasaldo);
+        DATABASE.EseguiSPNonRead();
     }
 
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        DATABASE DB = new DATABASE();
-        DB.query = "FATTURE_SelectAll";
-        dt = DB.EseguiSPRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "FATTURE_SelectAll";
+        dt = DATABASE.EseguiSPRead();
         return dt;
     }
 
     public DataTable SelectByDataSaldo()
     {
         DataTable dt = new DataTable();
-        DATABASE DB = new DATABASE();
-        DB.query = "FATTURE_SelectByDataSaldo";
-        DB.cmd.Parameters.AddWithValue("datasaldo", datasaldo);
-        DB.EseguiSPRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "FATTURE_SelectByDataSaldo";
+        DATABASE.cmd.Parameters.AddWithValue("datasaldo", datasaldo);
+        DATABASE.EseguiSPRead();
         return dt;
     }
 
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
-        DATABASE DB = new DATABASE();
-        DB.query = "FATTURE_SelectByKey";
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
-        DB.EseguiSPRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "FATTURE_SelectByKey";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
+        DATABASE.EseguiSPRead();
         return dt;
     }
 
     public DataTable SelectByMonth(string anno)
     {
         DataTable dt = new DataTable();
-        DATABASE DB = new DATABASE();
-        DB.query = "FATTURE_SelectByMomth";
-        DB.cmd.Parameters.AddWithValue("anno", anno);
-        DB.EseguiSPRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "FATTURE_SelectByMomth";
+        DATABASE.cmd.Parameters.AddWithValue("anno", anno);
+        DATABASE.EseguiSPRead();
         return dt;
     }
 
     public DataTable SelectByYear(string anno)
     {
         DataTable dt = new DataTable();
-        DATABASE DB = new DATABASE();
-        DB.query = "FATTURE_SelectByYear";
-        DB.cmd.Parameters.AddWithValue("anno", anno);
-        DB.EseguiSPRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "FATTURE_SelectByYear";
+        DATABASE.cmd.Parameters.AddWithValue("anno", anno);
+        DATABASE.EseguiSPRead();
         return dt;
     }
 
     public DataTable SelectDate_Interval(string start, string end)
     {
         DataTable dt = new DataTable();
-        DATABASE DB = new DATABASE();
-        DB.query = "FATTURE_SelectDate_Interval";
-        DB.cmd.Parameters.AddWithValue("startdate", start);
-        DB.cmd.Parameters.AddWithValue("enddate", end);
-        DB.EseguiSPRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "FATTURE_SelectDate_Interval";
+        DATABASE.cmd.Parameters.AddWithValue("startdate", start);
+        DATABASE.cmd.Parameters.AddWithValue("enddate", end);
+        DATABASE.EseguiSPRead();
         return dt;
     }
 }

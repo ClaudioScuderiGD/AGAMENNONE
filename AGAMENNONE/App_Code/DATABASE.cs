@@ -4,24 +4,26 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Configuration;
 
 
-public class DATABASE
+public static class DATABASE
 {
-    public SqlConnection conn = new SqlConnection();
-    public string query;
-    public SqlCommand cmd = new SqlCommand();
-    public SqlDataAdapter DA = new SqlDataAdapter();
-    public DataTable DT = new DataTable();
+    public static SqlConnection conn = new SqlConnection();
+    public static string query;
+    public static SqlCommand cmd = new SqlCommand();
+    public static SqlDataAdapter DA = new SqlDataAdapter();
+    public static DataTable DT = new DataTable();
 
-    public DATABASE()
+    static DATABASE()
     {
-        conn.ConnectionString = @"Data Source=DESKTOP-GR1O3LV\SQLEXPRESS;Initial Catalog=AGAMENNONE;Integrated Security=True;";
+        //conn.ConnectionString = @"Data Source=DESKTOP-GR1O3LV\SQLEXPRESS;Initial Catalog=AGAMENNONE;Integrated Security=True;";
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["AGAMENNONEConnectionString"].ConnectionString;
         cmd.Connection = conn;
     }
 
     //carica i dati db con una query diretta scritta in SQL
-    public DataTable EseguiQueryRead()
+    public static DataTable EseguiQueryRead()
     {
         cmd.CommandText = query;
         cmd.CommandType = CommandType.Text;
@@ -32,7 +34,7 @@ public class DATABASE
     }
 
     //esegue ins, upd, del sul db
-    public void EseguiQueryNonRead()
+    public static void EseguiQueryNonRead()
     {
         cmd.CommandText = query;
         cmd.CommandType = CommandType.Text;
@@ -42,7 +44,7 @@ public class DATABASE
     }
 
     //eseguo una stored procedure senza ritorno di dati
-    public void EseguiSPNonRead()
+    public static void EseguiSPNonRead()
     {
         cmd.CommandText = query;
         cmd.CommandType = CommandType.StoredProcedure;
@@ -51,7 +53,7 @@ public class DATABASE
         conn.Close();
     }
 
-    public DataTable EseguiSPRead()
+    public static DataTable EseguiSPRead()
     {
         cmd.CommandText = query;
         cmd.CommandType = CommandType.StoredProcedure;

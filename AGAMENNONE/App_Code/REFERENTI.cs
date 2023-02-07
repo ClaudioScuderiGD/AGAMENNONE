@@ -12,7 +12,7 @@ public class REFERENTI
     public string NOME;
     public string EMAIL;
     public string TELEFONO;
-    DATABASE DB = new DATABASE();
+    //DATABASE DB = new DATABASE();
 
     public REFERENTI()
     {
@@ -21,48 +21,48 @@ public class REFERENTI
 
     public void Insert()
     {
-        DB.cmd.CommandText = "REFERENTI_Insert";
-        DB.cmd.Parameters.AddWithValue("chiaveCliente", chiaveCliente);
-        DB.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
-        DB.cmd.Parameters.AddWithValue("NOME", NOME);
-        DB.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
-        DB.cmd.Parameters.AddWithValue("TELEFONO", TELEFONO);
-        DB.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "REFERENTI_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveCliente", chiaveCliente);
+        DATABASE.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
+        DATABASE.cmd.Parameters.AddWithValue("NOME", NOME);
+        DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
+        DATABASE.cmd.Parameters.AddWithValue("TELEFONO", TELEFONO);
+        DATABASE.EseguiSPNonRead();
     }
 
     public void Update()
     {
-        DB.cmd.CommandText = "REFERENTI_Insert";
-        DB.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
-        DB.cmd.Parameters.AddWithValue("NOME", NOME);
-        DB.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
-        DB.cmd.Parameters.AddWithValue("TELEFONO", TELEFONO);
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
-        DB.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "REFERENTI_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
+        DATABASE.cmd.Parameters.AddWithValue("NOME", NOME);
+        DATABASE.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
+        DATABASE.cmd.Parameters.AddWithValue("TELEFONO", TELEFONO);
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
+        DATABASE.EseguiSPNonRead();
     }
 
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        DB.query = "REFERENTI_SelectAll";
-        dt = DB.EseguiSPRead();
+        DATABASE.query = "REFERENTI_SelectAll";
+        dt = DATABASE.EseguiSPRead();
         return dt;
     }
 
     public DataTable SelectAll_DDL()
     {
         DataTable dt = new DataTable();
-        DB.query = "REFERENTI_SelectAll_DDL";
-        dt = DB.EseguiSPRead();
+        DATABASE.query = "REFERENTI_SelectAll_DDL";
+        dt = DATABASE.EseguiSPRead();
         return dt;
     }
 
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
-        DB.query = "COMMESSE_SelectByKey";
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
-        dt = DB.EseguiSPRead();
+        DATABASE.query = "COMMESSE_SelectByKey";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
+        dt = DATABASE.EseguiSPRead();
         return dt;
     }
 }

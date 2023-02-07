@@ -8,7 +8,7 @@ public class REFERENTICOMMESSE
     public int chiave;
     public int chiaveReferente;
     public int chiaveCommessa;
-    DATABASE DB = new DATABASE();
+    //DATABASE DB = new DATABASE();
     public REFERENTICOMMESSE()
     {
 
@@ -16,15 +16,15 @@ public class REFERENTICOMMESSE
 
     public void Insert()
     {
-        DB.cmd.CommandText = "REFERENTICOMMESSE_Insert";
-        DB.cmd.Parameters.AddWithValue("chiaveReferente", chiaveReferente);
-        DB.cmd.Parameters.AddWithValue("chiaveCommessa", chiaveCommessa);
-        DB.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "REFERENTICOMMESSE_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveReferente", chiaveReferente);
+        DATABASE.cmd.Parameters.AddWithValue("chiaveCommessa", chiaveCommessa);
+        DATABASE.EseguiSPNonRead();
     }
 
     public void Delete()
     {
-        DB.cmd.CommandText = "REFERENTICOMMESSE_Delete";
-        DB.EseguiSPNonRead();
+        DATABASE.cmd.CommandText = "REFERENTICOMMESSE_Delete";
+        DATABASE.EseguiSPNonRead();
     }
 }

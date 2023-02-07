@@ -7,16 +7,16 @@ using System.Text;
 using System.Web;
 
 
-public class Crypt
+public static class Crypt
 {
-    public string KEY = "bf4ca5898a4e4133bbce2ea2315a1916";
+    public static string KEY = "bf4ca5898a4e4133bbce2ea2315a1916";
 
-    public Crypt()
+    static Crypt()
     {
 
     }
 
-    public string Crypta(string plainText)
+    public static string Crypta(string plainText)
     {
         byte[] iv = new byte[16];
         byte[] array;
@@ -44,7 +44,7 @@ public class Crypt
         return Convert.ToBase64String(array);
     }
 
-    public string Decrypta(string cipherText)
+    public static string Decrypta(string cipherText)
     {
         byte[] iv = new byte[16];
         byte[] buffer = Convert.FromBase64String(cipherText);

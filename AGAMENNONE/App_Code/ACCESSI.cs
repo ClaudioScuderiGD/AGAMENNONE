@@ -19,38 +19,38 @@ public class ACCESSI
 
     public void Insert()
     {
-        DATABASE DB = new DATABASE();
-        DB.query = "ACCESSI_Insert";
-        DB.cmd.Parameters.AddWithValue("chiaveDipendente", chiaveDipendente);
-        DB.cmd.Parameters.AddWithValue("dataora", dataora);
-        DB.cmd.Parameters.AddWithValue("evento", evento);       
-        DB.EseguiSPNonRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "ACCESSI_Insert";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveDipendente", chiaveDipendente);
+        DATABASE.cmd.Parameters.AddWithValue("dataora", dataora);
+        DATABASE.cmd.Parameters.AddWithValue("evento", evento);
+        DATABASE.EseguiSPNonRead();
     } 
     
     public void DeleteAll()
     {
-        DATABASE DB = new DATABASE();
-        DB.query = "ACCESSI_DeleteAll";         
-        DB.EseguiSPNonRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "ACCESSI_DeleteAll";
+        DATABASE.EseguiSPNonRead();
     }
 
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        DATABASE DB = new DATABASE();
-        DB.query = "ACCESSI_SelectAll";
-        dt = DB.EseguiSPRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "ACCESSI_SelectAll";
+        dt = DATABASE.EseguiSPRead();
         return dt;
     }
 
     public DataTable SelectDate_Interval(string start, string end)
     {
         DataTable dt = new DataTable();
-        DATABASE DB = new DATABASE();
-        DB.query = "ACCESSI_SelectDate_Interval";
-        DB.cmd.Parameters.AddWithValue("startdate", start);
-        DB.cmd.Parameters.AddWithValue("enddate", end);
-        dt = DB.EseguiSPRead();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "ACCESSI_SelectDate_Interval";
+        DATABASE.cmd.Parameters.AddWithValue("startdate", start);
+        DATABASE.cmd.Parameters.AddWithValue("enddate", end);
+        dt = DATABASE.EseguiSPRead();
         return dt;
     }
 }
