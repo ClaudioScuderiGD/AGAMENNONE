@@ -1,9 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/MasterPage.master" AutoEventWireup="true" CodeFile="ModificaCliente.aspx.cs" Inherits="Forms_ModificaCliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ModificaCliente.aspx.cs" Inherits="Forms_CLIENTI_ModificaCliente" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
         <div class="container py-5 mt-5">
             <div class="row d-flex justify-content-center align-items-center" style="height: 25px; margin-bottom:5px; margin-top:-5px">
                 <div class="col-md-12 text-center">
@@ -135,5 +141,6 @@
                 </div>
             </div>
         </div>
-</asp:Content>
-
+    </form>
+</body>
+</html>

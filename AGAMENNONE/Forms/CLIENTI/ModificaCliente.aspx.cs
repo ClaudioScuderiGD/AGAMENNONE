@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Forms_ModificaCliente : System.Web.UI.Page
+public partial class Forms_CLIENTI_ModificaCliente : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
