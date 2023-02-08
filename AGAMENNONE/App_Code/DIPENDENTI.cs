@@ -32,6 +32,7 @@ public class DIPENDENTI
 
     public void Abilita()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_Abilita";
         DATABASE.EseguiSPNonRead();
@@ -39,6 +40,7 @@ public class DIPENDENTI
     
     public void Disabilita()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_Disabilita";
         DATABASE.EseguiSPNonRead();
@@ -46,6 +48,7 @@ public class DIPENDENTI
 
     public void Registra()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_Registra";
         DATABASE.cmd.Parameters.AddWithValue("email", email);
@@ -62,6 +65,7 @@ public class DIPENDENTI
 
     public DataTable Login()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_Login";
@@ -73,6 +77,7 @@ public class DIPENDENTI
 
     public void CambioPassword()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_CambioPassword";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
@@ -82,6 +87,7 @@ public class DIPENDENTI
 
     public void Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("email", email);
@@ -104,6 +110,7 @@ public class DIPENDENTI
 
     public void Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
@@ -127,6 +134,7 @@ public class DIPENDENTI
 
     public DataTable SelectAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_SelectAll";     
@@ -136,6 +144,7 @@ public class DIPENDENTI
 
     public DataTable SelectAll_DDL()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_SelectAll_DDL";
@@ -145,6 +154,7 @@ public class DIPENDENTI
     
     public DataTable SelectByKey()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_SelectByKey";

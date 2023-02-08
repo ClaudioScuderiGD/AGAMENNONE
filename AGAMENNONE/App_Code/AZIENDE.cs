@@ -29,6 +29,7 @@ public class AZIENDE
 
     public void Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_Insert";
         DATABASE.cmd.Parameters.AddWithValue("ragionesociale", ragionesociale);
@@ -50,6 +51,7 @@ public class AZIENDE
 
     public void Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
@@ -72,6 +74,7 @@ public class AZIENDE
 
     public DataTable SelectAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_SelectAll";
@@ -81,6 +84,7 @@ public class AZIENDE
 
     public DataTable SelectAll_DDL()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_SelectAll_DDL";
@@ -90,10 +94,11 @@ public class AZIENDE
 
     public DataTable SelectByKey()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_SelectByKey";
-        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
+        DATABASE.cmd.Parameters.AddWithValue("@chiave", chiave);
         dt = DATABASE.EseguiSPRead();
         return dt;
     }

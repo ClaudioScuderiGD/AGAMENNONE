@@ -21,7 +21,7 @@ public class COMMESSE
     public int PERNOTTAMENTO;
     public int PASTO;
     public int KM;
-    public int PEDAGGIO;
+    public int PEDAGGI;
     public int MEZZI;
     //DATABASE DB = new DATABASE();
 
@@ -32,6 +32,7 @@ public class COMMESSE
 
     public void Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "COMMESSE_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveCliente", chiaveCliente);
         DATABASE.cmd.Parameters.AddWithValue("chiaveResponsabile", chiaveResponsabile);
@@ -53,6 +54,7 @@ public class COMMESSE
 
     public void Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "COMMESSE_Update";
         DATABASE.cmd.Parameters.AddWithValue("CORPOORA", CORPOORA);
         DATABASE.cmd.Parameters.AddWithValue("DATAAPERTURA", DATAAPERTURA);
@@ -73,6 +75,7 @@ public class COMMESSE
 
     public DataTable SelectAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "COMMESSE_SelectAll";
         dt = DATABASE.EseguiSPRead();
@@ -81,6 +84,7 @@ public class COMMESSE
 
     public DataTable SelectAll_DDL_Cliente()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "COMMESSE_SelectAll_DDL_Cliente";
         dt = DATABASE.EseguiSPRead();
@@ -88,6 +92,7 @@ public class COMMESSE
     }
     public DataTable SelectAll_DDL_CorpoOra()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "COMMESSE_SelectAll_DDL_CorpoOra";
         dt = DATABASE.EseguiSPRead();
@@ -96,6 +101,7 @@ public class COMMESSE
 
     public DataTable SelectAll_DDL_Responsabile()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "COMMESSE_SelectAll_DDL_Responsabile";
         dt = DATABASE.EseguiSPRead();
@@ -104,6 +110,7 @@ public class COMMESSE
 
     public DataTable SelectByKey()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "COMMESSE_SelectByKey";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
@@ -113,6 +120,7 @@ public class COMMESSE
 
     public DataTable SelectAll_DateInterval(string start, string end)
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "COMMESSE_SelectAll_DateInterval";
         DATABASE.cmd.Parameters.AddWithValue("startdate", start);

@@ -23,6 +23,7 @@ public class FATTURE
 
     public void Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "FATTURE_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveCommessa", chiaveCommessa);
@@ -37,6 +38,7 @@ public class FATTURE
 
     public void Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "FATTURE_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
@@ -51,6 +53,7 @@ public class FATTURE
 
     public DataTable SelectAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "FATTURE_SelectAll";
@@ -60,6 +63,7 @@ public class FATTURE
 
     public DataTable SelectByDataSaldo()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "FATTURE_SelectByDataSaldo";
@@ -70,6 +74,7 @@ public class FATTURE
 
     public DataTable SelectByKey()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "FATTURE_SelectByKey";
@@ -80,6 +85,7 @@ public class FATTURE
 
     public DataTable SelectByMonth(string anno)
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "FATTURE_SelectByMomth";
@@ -90,6 +96,7 @@ public class FATTURE
 
     public DataTable SelectByYear(string anno)
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "FATTURE_SelectByYear";
@@ -100,6 +107,7 @@ public class FATTURE
 
     public DataTable SelectDate_Interval(string start, string end)
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "FATTURE_SelectDate_Interval";

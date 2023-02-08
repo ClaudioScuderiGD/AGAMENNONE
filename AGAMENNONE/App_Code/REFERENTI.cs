@@ -21,6 +21,7 @@ public class REFERENTI
 
     public void Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "REFERENTI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveCliente", chiaveCliente);
         DATABASE.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
@@ -32,6 +33,7 @@ public class REFERENTI
 
     public void Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "REFERENTI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
         DATABASE.cmd.Parameters.AddWithValue("NOME", NOME);
@@ -43,6 +45,7 @@ public class REFERENTI
 
     public DataTable SelectAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "REFERENTI_SelectAll";
         dt = DATABASE.EseguiSPRead();
@@ -51,6 +54,7 @@ public class REFERENTI
 
     public DataTable SelectAll_DDL()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "REFERENTI_SelectAll_DDL";
         dt = DATABASE.EseguiSPRead();
@@ -59,6 +63,7 @@ public class REFERENTI
 
     public DataTable SelectByKey()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "COMMESSE_SelectByKey";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);

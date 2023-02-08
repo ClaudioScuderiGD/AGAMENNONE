@@ -18,6 +18,7 @@ public class EVENTI
 
     public void Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "EVENTI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveDipendente", chiaveDipendente);
@@ -28,6 +29,7 @@ public class EVENTI
 
     public void DeleteAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "EVENTI_DeleteAll";
         DATABASE.EseguiSPNonRead();
@@ -35,6 +37,7 @@ public class EVENTI
 
     public DataTable SelectAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "EVENTI_SelectAll";
@@ -44,6 +47,7 @@ public class EVENTI
 
     public DataTable SelectDate_Interval(string start, string end)
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "EVENTI_SelectDate_Interval";

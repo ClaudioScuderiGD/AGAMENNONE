@@ -44,6 +44,66 @@
     height: 445px;
 }
 
+.PopupLog {
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: darkgray;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 25%;
+    height: 207px;
+}
+
+.PopupFatture {
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: darkgray;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 25%;
+    height: 280px;
+}
+
+.PopupReferente {
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: darkgray;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 35%;
+    height: 207px;
+}
+
+.PopupDipendenti {
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: darkgray;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 30%;
+    height: 395px;
+}
+
+.PopupReferentiCommesse {
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: darkgray;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 35%;
+    height: 200px;
+}
+
 .altezzariga {
     height: 30px;
 }

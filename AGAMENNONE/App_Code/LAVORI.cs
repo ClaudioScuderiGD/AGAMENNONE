@@ -32,6 +32,7 @@ public class LAVORI
 
     public void Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "LAVORI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveCommessa", chiaveCommessa);
@@ -52,6 +53,7 @@ public class LAVORI
 
     public void Update()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "LAVORI_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
@@ -73,6 +75,7 @@ public class LAVORI
 
     public void Accetta()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "LAVORI_Accetta";
         DATABASE.EseguiSPNonRead();      
@@ -80,6 +83,7 @@ public class LAVORI
 
     public DataTable SelectAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "LAVORI_SelectAll";
@@ -89,6 +93,7 @@ public class LAVORI
 
     public DataTable SelectByKey()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "LAVORI_SelectByKey";
@@ -99,6 +104,7 @@ public class LAVORI
 
     public DataTable SelectByAccettazioneSpese()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "LAVORI_SelectByAccettazioneSpese";
@@ -109,6 +115,7 @@ public class LAVORI
 
     public DataTable SelectByCommessa()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "LAVORI_SelectByCommessa";
@@ -119,6 +126,7 @@ public class LAVORI
 
     public DataTable SelectByDipendentiDDL()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "LAVORI_SelectByDipendentiDDL";

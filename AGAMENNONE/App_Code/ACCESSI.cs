@@ -19,6 +19,7 @@ public class ACCESSI
 
     public void Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "ACCESSI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveDipendente", chiaveDipendente);
@@ -29,6 +30,7 @@ public class ACCESSI
     
     public void DeleteAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "ACCESSI_DeleteAll";
         DATABASE.EseguiSPNonRead();
@@ -36,6 +38,7 @@ public class ACCESSI
 
     public DataTable SelectAll()
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "ACCESSI_SelectAll";
@@ -45,6 +48,7 @@ public class ACCESSI
 
     public DataTable SelectDate_Interval(string start, string end)
     {
+        DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "ACCESSI_SelectDate_Interval";

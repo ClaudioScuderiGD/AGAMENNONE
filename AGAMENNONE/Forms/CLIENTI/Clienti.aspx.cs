@@ -16,4 +16,15 @@ public partial class Forms_Clienti : System.Web.UI.Page
     {
         grigliaClienti.DataBind();
     }
+
+    protected void grigliaClienti_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (grigliaClienti.SelectedValue == null)
+        {
+            Session["chiave"] = null;
+            return;
+        }
+        Session["chiave"] = grigliaClienti.SelectedValue.ToString();
+        ModalPopupExtender1.Enabled = true;
+    }
 }

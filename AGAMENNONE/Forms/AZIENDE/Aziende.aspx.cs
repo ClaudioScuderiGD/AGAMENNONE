@@ -21,6 +21,12 @@ public partial class Forms_Aziende : System.Web.UI.Page
 
     protected void griglia_SelectedIndexChanged(object sender, EventArgs e)
     {
+        if(griglia.SelectedValue == null) 
+        {
+            Session["chiave"] = null;
+            return;
+        } 
         Session["chiave"] = griglia.SelectedValue.ToString();
+        ModalPopupExtender1.Enabled = true;
     }
 }

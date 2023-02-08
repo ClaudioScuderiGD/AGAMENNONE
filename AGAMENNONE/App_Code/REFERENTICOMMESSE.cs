@@ -16,6 +16,7 @@ public class REFERENTICOMMESSE
 
     public void Insert()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "REFERENTICOMMESSE_Insert";
         DATABASE.cmd.Parameters.AddWithValue("chiaveReferente", chiaveReferente);
         DATABASE.cmd.Parameters.AddWithValue("chiaveCommessa", chiaveCommessa);
@@ -24,6 +25,7 @@ public class REFERENTICOMMESSE
 
     public void Delete()
     {
+        DATABASE.cmd.Parameters.Clear();
         DATABASE.cmd.CommandText = "REFERENTICOMMESSE_Delete";
         DATABASE.EseguiSPNonRead();
     }
