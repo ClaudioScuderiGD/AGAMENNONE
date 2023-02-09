@@ -18,5 +18,6 @@ public partial class Forms_Default : System.Web.UI.Page
 
         F.FATTURATOMENSILE(ddlAnno.SelectedValue.ToString());
         graficoMese.DataBind();
+        grigliaMese.DataBind();
     }
 }
