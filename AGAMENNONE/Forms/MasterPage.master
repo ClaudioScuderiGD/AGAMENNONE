@@ -48,6 +48,7 @@
                             <a class="dropdown-item" href="/Forms/COMMESSE/Commesse.aspx">Gestione Commesse</a>
                             <a class="dropdown-item" href="/Forms/LAVORI/Lavori.aspx">Gestione Lavori</a>
                         </div>
+                        <a href="/Forms/Accettazione.aspx">Accettazione</a>
                         <div class="dropdown">
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink4">

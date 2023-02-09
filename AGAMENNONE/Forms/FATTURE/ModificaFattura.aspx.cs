@@ -34,6 +34,29 @@ public partial class Forms_FATTURE_ModificaFattura : System.Web.UI.Page
             txtAliquota.Text = dt.Rows[0]["aliquota"].ToString();
             txtDescrizione.Text = dt.Rows[0]["descrizione"].ToString();
             txtDataSaldo.Text = dt.Rows[0]["datasaldo"].ToString();
-        }           
+        }
+    }
+
+    protected void btnSalva_Click(object sender, EventArgs e)
+    {
+        if (txtNumFattura.Text.Trim() == "")
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Errore');", true);
+            return;
+        }
+        string chiavegriglia = Session["chiave"].ToString();
+
+        FATTURE F = new FATTURE();
+
+        F.chiave = Convert.ToInt32(chiavegriglia);
+        F.numerofattura = txtNumFattura.Text.Trim();
+        F.datafattura = txtDataFattura.Text.Trim();
+        F.datasaldo = txtDataSaldo.Text.Trim();
+        F.importo = int.Parse(txtImporto.Text.Trim());
+        F.aliquota = int.Parse(txtAliquota.Text.Trim());
+        F.descrizione = txtDescrizione.Text.Trim();
+
+        F.Update();
+        DataBind();
     }
 }

@@ -45,4 +45,37 @@ public partial class Forms_DIPENDENTI_ModificaDipendente : System.Web.UI.Page
             txtDataChiusura.Text = dt.Rows[0]["datafinerapporto"].ToString();
         }
     }
+
+    protected void btnSalva_Click(object sender, EventArgs e)
+    {
+        if (txtEmail.Text.Trim() == "")
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Errore');", true);
+            return;
+        }
+
+        string chiavegriglia = Session["chiave"].ToString();
+
+        DIPENDENTI D = new DIPENDENTI();
+
+        D.chiave = Convert.ToInt32(chiavegriglia);
+        D.email = txtEmail.Text.Trim();
+        D.password = txtPassword.Text.Trim();
+        D.abilitato = int.Parse(txtAbilitato.Text.Trim());
+        D.primoaccesso = int.Parse(txtPrimoAccesso.Text.Trim());
+        D.ruolo = txtRuolo.Text.Trim();
+        D.cognome = txtCognome.Text.Trim();
+        D.nome = txtNome.Text.Trim();
+        D.indirizzo = txtIndirizzo.Text.Trim();
+        D.citta = txtCitta.Text.Trim();
+        D.cap = txtCap.Text.Trim();
+        D.provincia = txtProvincia.Text.Trim();
+        D.telefono = txtTelefono.Text.Trim();
+        D.costoorario = int.Parse(txtCostoOrario.Text.Trim());
+        D.datainiziorapporto = txtDataApertura.Text.Trim();
+        D.datafinerapporto = txtDataChiusura.Text.Trim();
+
+        D.Update();
+        DataBind();
+    }
 }

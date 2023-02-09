@@ -136,7 +136,7 @@
             <div class="row" style="height: 30px">
                 <div class="col-md-12">
                     <center>
-                        <asp:Button ID="btnSalva" runat="server" Text="Salva" Style="width: 30%; height: 25px" />
+                        <asp:Button ID="btnSalva" runat="server" Text="Salva" Style="width: 30%; height: 25px" OnClick="btnSalva_Click" />
                     </center>
                 </div>
             </div>

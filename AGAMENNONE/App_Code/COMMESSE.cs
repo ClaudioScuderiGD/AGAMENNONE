@@ -47,7 +47,7 @@ public class COMMESSE
         DATABASE.cmd.Parameters.AddWithValue("PERNOTTAMENTO", PERNOTTAMENTO);
         DATABASE.cmd.Parameters.AddWithValue("PASTO", PASTO);
         DATABASE.cmd.Parameters.AddWithValue("KM", KM);
-        DATABASE.cmd.Parameters.AddWithValue("PEDAGGIO", PEDAGGIO);
+        DATABASE.cmd.Parameters.AddWithValue("PEDAGGI", PEDAGGI);
         DATABASE.cmd.Parameters.AddWithValue("MEZZI", MEZZI);
         DATABASE.EseguiSPNonRead();
     }
@@ -67,7 +67,7 @@ public class COMMESSE
         DATABASE.cmd.Parameters.AddWithValue("PERNOTTAMENTO", PERNOTTAMENTO);
         DATABASE.cmd.Parameters.AddWithValue("PASTO", PASTO);
         DATABASE.cmd.Parameters.AddWithValue("KM", KM);
-        DATABASE.cmd.Parameters.AddWithValue("PEDAGGIO", PEDAGGIO);
+        DATABASE.cmd.Parameters.AddWithValue("PEDAGGI", PEDAGGI);
         DATABASE.cmd.Parameters.AddWithValue("MEZZI", MEZZI);
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.EseguiSPNonRead();

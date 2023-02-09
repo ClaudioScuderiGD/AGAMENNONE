@@ -78,6 +78,7 @@ public class LAVORI
         DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "LAVORI_Accetta";
+        DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.EseguiSPNonRead();      
     }
 

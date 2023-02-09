@@ -1,15 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InserisciLavoro.aspx.cs" Inherits="Forms_LAVORI_InserisciLavoro" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ModificaLavoro.aspx.cs" Inherits="Forms_LAVORI_ModificaLavoro" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container py-5 mt-5">
+         <div class="container py-5 mt-5">
             <div class="row d-flex justify-content-center align-items-center" style="height: 25px; margin-bottom: 5px; margin-top: -5px">
                 <div class="col-md-12 text-center">
                     <center>
@@ -106,7 +106,7 @@
             <div class="row" style="height: 30px">
                 <div class="col-md-12">
                     <center>
-                        <asp:Button ID="btnSalva" runat="server" Text="Salva" Style="width: 30%; height: 25px" OnClick="btnSalva_Click" />
+                        <asp:Button ID="btnSalva" runat="server" Text="Salva" Style="width: 30%; height: 25px" />
                     </center>
                 </div>
             </div>

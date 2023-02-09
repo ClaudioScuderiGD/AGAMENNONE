@@ -43,4 +43,34 @@ public partial class Forms_COMMESSE_ModificaCommesse : System.Web.UI.Page
             txtMezzi.Text = dt.Rows[0]["mezzi"].ToString();
         }
     }
+
+    protected void btnSalva_Click(object sender, EventArgs e)
+    {
+        if (txtDataApertura.Text.Trim() == "")
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Errore');", true);
+            return;
+        }
+
+        COMMESSE CS = new COMMESSE();
+        string chiavegriglia = Session["chiave"].ToString();
+
+        CS.chiave = Convert.ToInt32(chiavegriglia);
+        CS.CORPOORA = txtCorpoOra.Text.Trim();
+        CS.DATAAPERTURA = txtDataApertura.Text.Trim();
+        CS.DATACHIUSURA = txtDataChiusura.Text.Trim();
+        CS.DATACONSEGNA = txtDataConsegna.Text.Trim();
+        CS.DESCRIZIONE = txtDescrizione.Text.Trim();
+        CS.IMPORTOCORPO = int.Parse(txtImportoCorpo.Text.Trim());
+        CS.IMPORTOORARIO = int.Parse(txtImportoOrario.Text.Trim());
+        CS.ANTICIPO = int.Parse(txtAnticipo.Text.Trim());
+        CS.PERNOTTAMENTO = int.Parse(txtPernottamento.Text.Trim());
+        CS.PASTO = int.Parse(txtPasto.Text.Trim());
+        CS.KM = int.Parse(txtKM.Text.Trim());
+        CS.PEDAGGI = int.Parse(txtPedaggi.Text.Trim());
+        CS.MEZZI = int.Parse(txtMezzi.Text.Trim());
+
+        CS.Update();
+        DataBind();
+    }
 }

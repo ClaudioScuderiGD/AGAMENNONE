@@ -34,4 +34,25 @@ public partial class Forms_REFERENTI_ModificaReferenti : System.Web.UI.Page
             txtTelefono.Text = dt.Rows[0]["telefono"].ToString();
         }
     }
+
+    protected void btnSalva_Click(object sender, EventArgs e)
+    {
+        if (txtCognome.Text.Trim() == "")
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Errore');", true);
+            return;
+        }
+
+        string chiavegriglia = Session["chiave"].ToString();
+        REFERENTI R = new REFERENTI();
+
+        R.chiave = Convert.ToInt32(chiavegriglia);
+        R.COGNOME = txtCognome.Text.Trim();
+        R.NOME = txtNome.Text.Trim();
+        R.EMAIL = txtEmail.Text.Trim();
+        R.TELEFONO = txtTelefono.Text.Trim();
+ 
+        R.Update();
+        DataBind();
+    }
 }
