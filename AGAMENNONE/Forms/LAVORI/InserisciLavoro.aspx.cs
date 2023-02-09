@@ -22,6 +22,8 @@ public partial class Forms_LAVORI_InserisciLavoro : System.Web.UI.Page
 
         LAVORI L = new LAVORI();
 
+        L.chiaveCommessa = int.Parse(ddlCommesse.SelectedValue.ToString());
+        L.chiaveDipendente = int.Parse(ddlDipendenti.SelectedValue.ToString());
         L.dataora = txtDataOra.Text.Trim();
         L.ore = int.Parse(txtOre.Text.Trim());
         L.descrizione = txtDescrizione.Text.Trim();

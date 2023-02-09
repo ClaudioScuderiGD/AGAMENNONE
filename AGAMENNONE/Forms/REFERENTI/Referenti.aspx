@@ -58,7 +58,7 @@
         Style="display: none">
 
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style="width: 98%; height: 150px;" id="Iframe2" src="/Forms/REFERENTI/InserisciReferenti.aspx" runat="server"></iframe>
+        <iframe style="width: 98%; height: 170px;" id="Iframe2" src="/Forms/REFERENTI/InserisciReferenti.aspx" runat="server"></iframe>
         <br />
         <asp:Button ID="btnChiudiPopup" Style="width: 30%; height: 30px;" runat="server" Text="Chiudi" OnClick="btnChiudiPopup_Click" />
         <%--chiude il popup--%>

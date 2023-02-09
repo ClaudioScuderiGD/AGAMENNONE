@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,9 +20,9 @@ public partial class Forms_LOG_InserisciLogEventi : System.Web.UI.Page
             ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Errore');", true);
             return;
         }
-
         EVENTI E = new EVENTI();
 
+        E.chiaveDipendente = int.Parse(ddlDipendente.SelectedValue.ToString());
         E.dataora = txtDataOra.Text.Trim();
         E.evento = txtEvento.Text.Trim();
 

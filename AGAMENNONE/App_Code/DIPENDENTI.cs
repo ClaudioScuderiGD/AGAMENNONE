@@ -51,6 +51,7 @@ public class DIPENDENTI
         DATABASE.cmd.Parameters.Clear();
         //DATABASE DB = new DATABASE();
         DATABASE.query = "DIPENDENTI_Registra";
+        DATABASE.cmd.Parameters.AddWithValue("chiaveAzienda", chiaveAzienda);
         DATABASE.cmd.Parameters.AddWithValue("email", email);
         DATABASE.cmd.Parameters.AddWithValue("password", password);
         DATABASE.cmd.Parameters.AddWithValue("cognome", cognome);
@@ -83,6 +84,17 @@ public class DIPENDENTI
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.cmd.Parameters.AddWithValue("password", password);
         DATABASE.EseguiSPNonRead();
+    }
+
+     public DataTable EmailEsistente()
+    {
+        DATABASE.cmd.Parameters.Clear();
+        DataTable dt = new DataTable();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "DIPENDENTI_EmailEsistente";
+        DATABASE.cmd.Parameters.AddWithValue("email", password);
+        DATABASE.EseguiSPRead();
+        return dt;
     }
 
     public void Insert()

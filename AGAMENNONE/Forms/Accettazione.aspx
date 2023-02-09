@@ -16,7 +16,7 @@
                         <asp:BoundField DataField="DESCRIZIONESPESEEXTRA" HeaderText="DESCRIZIONESPESEEXTRA" SortExpression="DESCRIZIONESPESEEXTRA" />
                     </Columns>
                     <SelectedRowStyle  BackColor="LightBlue"/>
-                </asp:GridView>
+                </asp:GridView>           
                 <asp:SqlDataSource ID="sdsGrigliaAccettazione" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="select L.chiave, L.PERNOTTAMENTO, L.PASTO, L.KM, L.PEDAGGI, L.MEZZI, L.SPESEEXTRA, L.DESCRIZIONESPESEEXTRA
 	from LAVORI as L
 	join COMMESSE as C

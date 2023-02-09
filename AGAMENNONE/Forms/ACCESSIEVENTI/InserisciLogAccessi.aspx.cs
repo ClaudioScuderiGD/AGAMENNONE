@@ -22,6 +22,7 @@ public partial class Forms_LOG_InserisciLogAccessi : System.Web.UI.Page
 
         ACCESSI AS = new ACCESSI();
 
+        AS.chiaveDipendente = int.Parse(ddlDipendente.SelectedValue.ToString());
         AS.dataora = txtDataOra.Text.Trim();
         AS.evento = txtEvento.Text.Trim();
        

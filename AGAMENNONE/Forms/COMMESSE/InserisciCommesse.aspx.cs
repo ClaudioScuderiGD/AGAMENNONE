@@ -22,6 +22,8 @@ public partial class Forms_COMMESSE_InserisciCommesse : System.Web.UI.Page
 
         COMMESSE CS = new COMMESSE();
 
+        CS.chiaveCliente = int.Parse(ddlCliente.SelectedValue.ToString());
+        CS.chiaveResponsabile = int.Parse(ddlResponsabile.SelectedValue.ToString());
         CS.CORPOORA = txtCorpoOra.Text.Trim();
         CS.DATAAPERTURA = txtDataApertura.Text.Trim();
         CS.DATACHIUSURA = txtDataChiusura.Text.Trim();

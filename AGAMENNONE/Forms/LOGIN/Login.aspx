@@ -24,20 +24,16 @@
 
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example3">Inserisci la tua e-email</label>
-                                    <%--<input type="email" id="form3Example3" class="form-control form-control-lg"
-                                        placeholder="Enter a valid email address" />--%>
+                                    <h3><label class="form-label" for="form3Example3">Inserisci la tua e-email</label></h3>
                                     <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-lg"
-                                        placeholder="Inserisci un indirizzo e-mail valido"></asp:TextBox>                                
+                                        placeholder="Il tuo indirizzo e-mail"></asp:TextBox>                                
                                 </div>
 
                                 <!-- Password input -->
                                 <div class="form-outline mb-3">
-                                    <label class="form-label" for="form3Example4">Inserisci la tua password</label>
-                                    <%--<input type="password" id="form3Example4" class="form-control form-control-lg"
-                                        placeholder="Enter password" />--%>
+                                   <h3><label class="form-label" for="form3Example4">Inserisci la tua password</label></h3>
                                     <asp:TextBox ID="txtPWD" runat="server" class="form-control form-control-lg"
-                                        placeholder="Inserisci una password valida" TextMode="Password"></asp:TextBox>                                   
+                                        placeholder="La tua password" TextMode="Password"></asp:TextBox>                                   
                                 </div>
 
                                 <div class="d-flex justify-content-between align-items-center">
@@ -49,14 +45,11 @@
                                         <input class="form-check-input me-2" type="checkbox" onclick="myFunction()" value="" id="form2Example3" />
                                                                             
                                     </div>
-                                    <a href="#!" class="text-body">Non sei ancora registrato?</a>
+                                    <a href="/Forms/LOGIN/Registrazione.aspx" class="text-body">Non sei ancora registrato?</a>
                                 </div>
 
                                 <div class="text-center text-lg-start mt-4 pt-2">
-                                    <%--<button type="button" class="btn btn-primary btn-lg"
-                                        style="padding-left: 2.5rem; padding-right: 2.5rem;">
-                                        Login</button>--%>
-                                    <center><asp:Button ID="btnAccedi" runat="server" Text="Accedi" class="btn btn-primary btn-lg" style="width:40%"/></center>
+                                    <center><asp:Button ID="btnAccedi" runat="server" Text="Accedi" class="btn btn-primary btn-lg" style="width:40%" OnClick="btnAccedi_Click"/></center>
                                 </div>
                             </div>
                         </div>

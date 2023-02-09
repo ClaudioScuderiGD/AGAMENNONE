@@ -18,7 +18,23 @@
                 </div>
             </div>
 
-            
+             <div class="row" style="height: 30px">
+                <div class="col-md-2" style="width: 20%; float: left;">
+                    <label class="label" style="width: 15%">Cliente:</label>
+                </div>
+                <div class="col-md-4" style="width: 25%; float: left;">
+                    <asp:DropDownList ID="ddlCliente" runat="server" Style="width: 100%; margin-left: -5px;" DataSourceID="sdsDDLCliente" DataTextField="RAGIONESOCIALE" DataValueField="chiave"></asp:DropDownList>
+                    <asp:SqlDataSource ID="sdsDDLCliente" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="CLIENTI_SelectAll_DDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                </div>
+                <div class="col-md-2" style="width: 20%; float: left; margin-left: 5px;">
+                    <label class="label" style="width: 15%;">Responsabile:</label>
+                </div>
+                <div class="col-md-4" style="width: 25%; float: left;">
+                    <asp:DropDownList ID="ddlResponsabile" runat="server" Style="width: 100%; margin-left: -5px;" DataSourceID="sdsDDLResponsabile" DataTextField="DIPENDENTE" DataValueField="chiave"></asp:DropDownList>
+                    <asp:SqlDataSource ID="sdsDDLResponsabile" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="DIPENDENTI_SelectAll_DDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                </div>
+            </div>
+
             <div class="row" style="height: 30px">
                 <div class="col-md-2" style="width: 20%; float: left;">
                     <label class="label" style="width: 15%">Data apertura:</label>
@@ -50,7 +66,21 @@
                     <asp:TextBox ID="txtCorpoOra" runat="server" Style="width: 100%;" MaxLength="1"></asp:TextBox>
                 </div>
             </div>
-            <div class="row" style="height: 30px">                <div class="col-md-2" style="width: 20%; float: left;">                    <label class="label" style="width: 15%">Importo corpo:</label>                </div>                <div class="col-md-4" style="width: 25%; float: left;">                    <asp:TextBox ID="txtImportoCorpo" runat="server" Style="width: 100%; margin-left: -5px;"></asp:TextBox>                </div>                <div class="col-md-2" style="width: 20%; float: left;margin-left: 5px;">                    <label class="label" style="width: 15%;">Importo orario:</label>                </div>                <div class="col-md-4" style="width: 25%; float: left;">                    <asp:TextBox ID="txtImportoOrario" runat="server" Style="width: 100%;"></asp:TextBox>                </div>            </div>
+            <div class="row" style="height: 30px">
+                <div class="col-md-2" style="width: 20%; float: left;">
+                    <label class="label" style="width: 15%">Importo corpo:</label>
+                </div>
+                <div class="col-md-4" style="width: 25%; float: left;">
+                    <asp:TextBox ID="txtImportoCorpo" runat="server" Style="width: 100%; margin-left: -5px;"></asp:TextBox>
+                </div>
+
+                <div class="col-md-2" style="width: 20%; float: left;margin-left: 5px;">
+                    <label class="label" style="width: 15%;">Importo orario:</label>
+                </div>
+                <div class="col-md-4" style="width: 25%; float: left;">
+                    <asp:TextBox ID="txtImportoOrario" runat="server" Style="width: 100%;"></asp:TextBox>
+                </div>
+            </div>
             <div class="row" style="height: 30px">
                 <div class="col-md-2" style="width: 20%; float: left;">
                     <label class="label" style="width: 15%">Anticipo:</label>

@@ -15,6 +15,17 @@
                     <center><h2>Inserisci i campi</h2></center>
                 </div>
             </div>
+
+              <div class="row" style="height: 30px">
+                <div class="col-md-2" style="width: 45%; float: left;">
+                    <label class="label" style="width: 15%">Commessa:</label>
+                </div>
+                <div class="col-md-4" style="width: 50%; float: left;">
+                    <asp:DropDownList ID="ddlCommessa" runat="server" Style="width: 100%; margin-left: -5px;" DataSourceID="sdsDDLCommessa" DataTextField="CORPOORA" DataValueField="chiave"></asp:DropDownList>
+                    <asp:SqlDataSource ID="sdsDDLCommessa" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="COMMESSE_SelectAll_DDL_CorpoOra" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                </div>             
+            </div>
+
             <div class="row" style="height: 30px">
                 <div class="col-md-2" style="width: 30%; float: left;">
                     <label class="label" style="width: 30%">Numero Fattura:</label>

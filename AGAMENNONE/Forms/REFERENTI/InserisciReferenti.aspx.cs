@@ -21,7 +21,8 @@ public partial class Forms_REFERENTI_InserisciReferenti : System.Web.UI.Page
         }
        
         REFERENTI R = new REFERENTI();
-
+        
+        R.chiaveCliente = int.Parse(ddlCliente.SelectedValue.ToString());
         R.COGNOME = txtCognome.Text.Trim();
         R.NOME = txtNome.Text.Trim();
         R.EMAIL = txtEmail.Text.Trim();

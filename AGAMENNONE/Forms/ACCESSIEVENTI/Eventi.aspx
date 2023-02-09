@@ -17,8 +17,8 @@
             <div class="offset-1 col-lg-11 text-center">
 
                 <%-- pulsante che apre il popup --%>
-                <asp:Button ID="btnNuovoLogAccesso" class="text-center" runat="server" Style="width: 20%; height: 30px; margin-top: 20px;" Text="Inserire nuovo accesso" />
-                <asp:Button ID="btnEliminaLogAccesso" class="text-center" runat="server" Style="width: 20%; margin-left: 50px; height: 30px; margin-top: 20px;" Text="Elimina accesso" />
+                <asp:Button ID="btnNuovoLogAccesso" class="text-center" runat="server" Style="width: 20%; height: 30px; margin-top: 20px;" Text="Inserire nuovo evento" />
+                <asp:Button ID="btnEliminaLogAccesso" class="text-center" runat="server" Style="width: 20%; margin-left: 50px; height: 30px; margin-top: 20px;" Text="Elimina evento" />
             </div>
         </div>
 
@@ -55,7 +55,7 @@
         Style="display: none">
 
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style="width: 98%; height: 150px;" id="Iframe2" src="/Forms/ACCESSIEVENTI/InserisciLogAccessi.aspx" runat="server"></iframe>
+        <iframe style="width: 98%; height: 170px;" id="Iframe2" src="/Forms/ACCESSIEVENTI/InserisciLogEventi.aspx" runat="server"></iframe>
         <br />
         <asp:Button ID="btnChiudiPopup" Style="width: 30%; height: 30px;" runat="server" Text="Chiudi" OnClick="btnChiudiPopup_Click" />
         <%--chiude il popup--%>
@@ -75,7 +75,7 @@
         Style="display: none">
 
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style="width: 98%; height: 150px;" id="Iframe1" src="/Forms/ACCESSIEVENTI/EliminaLogAccessi.aspx" runat="server"></iframe>
+        <iframe style="width: 98%; height: 150px;" id="Iframe1" src="/Forms/ACCESSIEVENTI/EliminaLogEventi.aspx" runat="server"></iframe>
         <br />
         <asp:Button ID="Button2" class="text-center" Style="width: 30%; height: 30px;" runat="server" Text="Chiudi" OnClick="btnChiudiPopup_Click" />
         <%--chiude il popup--%>

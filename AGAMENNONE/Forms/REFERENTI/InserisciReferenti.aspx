@@ -15,6 +15,17 @@
                     <center><h2>Inserisci i campi</h2></center>
                 </div>
            </div>
+
+             <div class="row" style="height: 30px">
+                <div class="col-md-2" style="width: 45%; float: left;">
+                    <label class="label" style="width: 15%">Cliente:</label>
+                </div>
+                <div class="col-md-4" style="width: 50%; float: left;">
+                    <asp:DropDownList ID="ddlCliente" runat="server" Style="width: 100%; margin-left: -5px;" DataSourceID="sdsDDLCliente" DataTextField="RAGIONESOCIALE" DataValueField="chiave"></asp:DropDownList>
+                    <asp:SqlDataSource ID="sdsDDLCliente" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="AZIENDE_SelectAll_DDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                </div>             
+            </div>
+
             <div class="row" style="height: 30px">
                 <div class="col-md-2" style="width: 20%; float: left;">
                     <label class="label" style="width: 20%">Nome:</label>

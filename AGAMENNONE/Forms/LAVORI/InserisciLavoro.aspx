@@ -17,6 +17,22 @@
                     </center>
                 </div>
             </div>
+
+            <div class="row" style="height: 30px">
+                <div class="col-md-2" style="width: 20%; float: left;">
+                    <label class="label" style="width: 15%">Commessa:</label>
+                </div>
+                <div class="col-md-4" style="width: 25%; float: left;">
+                    <asp:DropDownList ID="ddlCommesse" Style="width: 100%; margin-left: -5px;" runat="server" DataTextField="RAGIONESOCIALE" DataValueField="chiave" DataSourceID="sdsCommesse"></asp:DropDownList><asp:SqlDataSource runat="server" ID="sdsCommesse" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="COMMESSE_SelectAll_DDL_Cliente" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                </div>
+                <div class="col-md-2" style="width: 20%; float: left; margin-left: 5px;">
+                    <label class="label" style="width: 15%;">Dipendente:</label>
+                </div>
+                <div class="col-md-4" style="width: 25%; float: left;">
+                    <asp:DropDownList ID="ddlDipendenti" Style="width: 100%;" runat="server" DataTextField="DIPENDENTE" DataValueField="chiave" DataSourceID="sdsDipendenti"></asp:DropDownList><asp:SqlDataSource runat="server" ID="sdsDipendenti" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="DIPENDENTI_SelectAll_DDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                </div>
+            </div>
+
             <div class="row" style="height: 30px">
                 <div class="col-md-2" style="width: 20%; float: left;">
                     <label class="label" style="width: 15%">Data e Ora:</label>
