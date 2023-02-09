@@ -81,6 +81,17 @@ public class FATTURE
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.EseguiSPRead();
         return dt;
+    }  
+    
+    public DataTable FATTURATOMENSILE(string anno)
+    {
+        DATABASE.cmd.Parameters.Clear();
+        DataTable dt = new DataTable();
+        //DATABASE DB = new DATABASE();
+        DATABASE.query = "FATTURATOMENSILE";
+        DATABASE.cmd.Parameters.AddWithValue("anno", anno);
+        DATABASE.EseguiSPRead();
+        return dt;
     }
 
     public DataTable SelectByMonth(string anno)
