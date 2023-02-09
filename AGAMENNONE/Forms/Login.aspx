@@ -15,7 +15,7 @@
             <div>
                 <section class="vh-100">
                     <div class="container-fluid h-custom">
-                        <div class="row d-flex justify-content-center align-items-center h-100" style="margin-top: 100px">
+                        <div class="row d-flex justify-content-center align-items-center h-100" style="margin-top: 300px">
                             <div class="col-md-9 col-lg-6 col-xl-5">
                                 <img src="/assets/images/fotoSito.jpg"
                                     class="img-fluid" alt="Sample image" />
