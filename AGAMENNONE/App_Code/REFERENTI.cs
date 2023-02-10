@@ -4,21 +4,28 @@ using System.Data;
 using System.Linq;
 using System.Web;
 
+/// <summary>
+/// Descrizione di riepilogo per REFERENTI
+/// </summary>
 public class REFERENTI
 {
+    //diciarazione delle variabili
     public int chiave;
     public int chiaveCliente;
     public string COGNOME;
     public string NOME;
     public string EMAIL;
     public string TELEFONO;
-    //DATABASE DB = new DATABASE();
 
+    //dichiarazione del costruttore
     public REFERENTI()
     {
 
     }
 
+    /// <summary>
+    /// il metodo Insert della classe REFERENTI serve ad inserire nuovi referenti nel database
+    /// </summary>
     public void Insert()
     {
         DATABASE.cmd.Parameters.Clear();
@@ -31,6 +38,9 @@ public class REFERENTI
         DATABASE.EseguiSPNonRead();
     }
 
+    /// <summary>
+    /// il metodo Update della classe REFERENTI serve a modificare i referenti nel database
+    /// </summary>
     public void Update()
     {
         DATABASE.cmd.Parameters.Clear();
@@ -43,6 +53,9 @@ public class REFERENTI
         DATABASE.EseguiSPNonRead();
     }
 
+    /// <summary>
+    /// il metodo SelectAll della classe REFERENTI serve a leggere i campi dei referenti nel database
+    /// </summary>
     public DataTable SelectAll()
     {
         DATABASE.cmd.Parameters.Clear();
@@ -52,6 +65,9 @@ public class REFERENTI
         return dt;
     }
 
+    /// <summary>
+    /// il metodo SelectAll_DDL della classe REFERENTI serve a selezionare il nome, cognome ed email dei referenti nel database in una dropdown list
+    /// </summary>
     public DataTable SelectAll_DDL()
     {
         DATABASE.cmd.Parameters.Clear();
@@ -61,6 +77,9 @@ public class REFERENTI
         return dt;
     }
 
+    /// <summary>
+    /// il metodo SelectByKey della classe REFERENTI serve a selezionare la chiave del referente selezionato nel database
+    /// </summary>
     public DataTable SelectByKey()
     {
         DATABASE.cmd.Parameters.Clear();

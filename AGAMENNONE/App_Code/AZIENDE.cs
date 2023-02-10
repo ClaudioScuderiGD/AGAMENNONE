@@ -4,8 +4,12 @@ using System.Data;
 using System.Linq;
 using System.Web;
 
+/// <summary>
+/// Classe che gestisce l'elenco delle aziende
+/// </summary>
 public class AZIENDE
 {
+    //dichiarazione delle variabili della classe
     public int chiave;
     public string ragionesociale;
     public string indirizzo;
@@ -22,15 +26,18 @@ public class AZIENDE
     public string emailtitolare;
     public string teltitolare;
 
+    //costruttore
     public AZIENDE()
     {
 
     }
 
+    /// <summary>
+    /// il metodo Insert della classe AZIENDE serve ad inserire nuove aziende nel database
+    /// </summary>
     public void Insert()
     {
         DATABASE.cmd.Parameters.Clear();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_Insert";
         DATABASE.cmd.Parameters.AddWithValue("ragionesociale", ragionesociale);
         DATABASE.cmd.Parameters.AddWithValue("indirizzo", indirizzo);
@@ -49,10 +56,12 @@ public class AZIENDE
         DATABASE.EseguiSPNonRead();
     }
 
+    /// <summary>
+    /// il metodo Update della classe AZIENDE serve a modificare le aziende nel database
+    /// </summary>
     public void Update()
     {
         DATABASE.cmd.Parameters.Clear();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.cmd.Parameters.AddWithValue("ragionesociale", ragionesociale);
@@ -72,31 +81,37 @@ public class AZIENDE
         DATABASE.EseguiSPNonRead();
     }
 
+    /// <summary>
+    /// il metodo SelectAll della classe AZIENDE serve a leggere le aziende nel database
+    /// </summary>
     public DataTable SelectAll()
     {
         DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_SelectAll";
         dt = DATABASE.EseguiSPRead();
         return dt;
     }
 
+    /// <summary>
+    /// il metodo SelectAll_DDL della classe AZIENDE serve a selezionare la ragione sociale delle aziende nel database in una dropdown list
+    /// </summary>
     public DataTable SelectAll_DDL()
     {
         DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_SelectAll_DDL";
         dt = DATABASE.EseguiSPRead();
         return dt;
     }
 
+    /// <summary>
+    /// il metodo SelectByKey della classe AZIENDE serve a selezionare la chiave dell'azienda selezionata nel database
+    /// </summary>
     public DataTable SelectByKey()
     {
         DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "AZIENDE_SelectByKey";
         DATABASE.cmd.Parameters.AddWithValue("@chiave", chiave);
         dt = DATABASE.EseguiSPRead();

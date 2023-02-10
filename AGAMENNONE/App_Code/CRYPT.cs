@@ -6,16 +6,22 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-
+/// <summary>
+/// Descrizione di riepilogo per CRYPT
+/// </summary>
 public class Crypt
 {
     public string KEY = "bf4ca5898a4e4133bbce2ea2315a1916";
 
+    //dichiarazione del costruttore
     static Crypt()
     {
 
     }
 
+    /// <summary>
+    /// funzione che crypta una password per salvarla nel database
+    /// </summary>
     public string Crypta(string plainText)
     {
         byte[] iv = new byte[16];
@@ -44,6 +50,9 @@ public class Crypt
         return Convert.ToBase64String(array);
     }
 
+    /// <summary>
+    /// funzione che decrypta una password per salvarla nel database
+    /// </summary>
     public string Decrypta(string cipherText)
     {
         byte[] iv = new byte[16];

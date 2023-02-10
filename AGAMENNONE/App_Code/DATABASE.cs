@@ -6,11 +6,14 @@ using System.Linq;
 using System.Web;
 using System.Configuration;
 
-
+/// <summary>
+/// Descrizione di riepilogo per DATABASE
+/// </summary>
 public static class DATABASE
 {
-    public static SqlConnection conn = new SqlConnection();
+    //dichiarazione variabili
     public static string query;
+    public static SqlConnection conn = new SqlConnection();    
     public static SqlCommand cmd = new SqlCommand();
     public static SqlDataAdapter DA = new SqlDataAdapter();
     public static DataTable DT = new DataTable();
@@ -22,7 +25,9 @@ public static class DATABASE
         cmd.Connection = conn;
     }
 
-    //carica i dati db con una query diretta scritta in SQL
+    /// <summary>
+    /// carica i dati db con una query diretta scritta in SQL
+    /// </summary>
     public static DataTable EseguiQueryRead()
     {
         cmd.CommandText = query;
@@ -33,7 +38,9 @@ public static class DATABASE
         return DT;
     }
 
-    //esegue ins, upd, del sul db
+    /// <summary>
+    /// esegue ins, upd, del sul db
+    /// </summary>
     public static void EseguiQueryNonRead()
     {
         cmd.CommandText = query;
@@ -43,7 +50,9 @@ public static class DATABASE
         conn.Close();
     }
 
-    //eseguo una stored procedure senza ritorno di dati
+    /// <summary>
+    /// eseguo una stored procedure senza ritorno di dati
+    /// </summary>
     public static void EseguiSPNonRead()
     {
         cmd.CommandText = query;
@@ -53,6 +62,9 @@ public static class DATABASE
         conn.Close();
     }
 
+    /// <summary>
+    /// eseguo una stored procedure con ritorno di dati
+    /// </summary>
     public static DataTable EseguiSPRead()
     {
         cmd.CommandText = query;

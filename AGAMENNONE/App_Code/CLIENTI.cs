@@ -9,6 +9,7 @@ using System.Web;
 /// </summary>
 public class CLIENTI
 {
+    //dichiarazione delle variabili
     public int chiave;
     public string ragionesociale;
     public string indirizzo;
@@ -25,15 +26,18 @@ public class CLIENTI
     public string emailtitolare;
     public string teltitolare;
 
+    //creazione del costruttore
     public CLIENTI()
     {
        
     }
 
+    /// <summary>
+    /// il metodo Insert della classe CLIENTI serve ad inserire nuovi clienti nel database
+    /// </summary>
     public void Insert()
     {
         DATABASE.cmd.Parameters.Clear();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "CLIENTI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("ragionesociale", ragionesociale);
         DATABASE.cmd.Parameters.AddWithValue("indirizzo", indirizzo);
@@ -52,10 +56,12 @@ public class CLIENTI
         DATABASE.EseguiSPNonRead();
     }
 
+    /// <summary>
+    /// il metodo Update della classe CLIENTI serve a modificare i clienti nel database
+    /// </summary>
     public void Update()
     {
         DATABASE.cmd.Parameters.Clear();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "CLIENTI_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.cmd.Parameters.AddWithValue("ragionesociale", ragionesociale);
@@ -75,31 +81,37 @@ public class CLIENTI
         DATABASE.EseguiSPNonRead();
     }
 
+    /// <summary>
+    /// il metodo SelectAll della classe CLIENTI serve a leggere i campi dei clienti nel database
+    /// </summary>
     public DataTable SelectAll()
     {
         DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "CLIENTI_SelectAll";
         dt = DATABASE.EseguiSPRead();
         return dt;
     }
 
+    /// <summary>
+    /// il metodo SelectAll_DDL della classe CLIENTI serve a selezionare la ragione sociale dei clienti nel database in una dropdown list
+    /// </summary>
     public DataTable SelectAll_DDL()
     {
         DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "CLIENTI_SelectAll_DDL";
         dt = DATABASE.EseguiSPRead();
         return dt;
     }
 
+    /// <summary>
+    /// il metodo SelectByKey della classe CLIENTI serve a selezionare la chiave del cliente selezionato nel database
+    /// </summary>
     public DataTable SelectByKey()
     {
         DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
-        //DATABASE DB = new DATABASE();
         DATABASE.query = "CLIENTI_SelectByKey";
         DATABASE.cmd.Parameters.AddWithValue("@chiave", chiave);
         dt = DATABASE.EseguiSPRead();
