@@ -11,4 +11,13 @@ public partial class Forms_Default : System.Web.UI.Page
     {
 
     }
+
+    protected void ddlCom_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        COMMESSE C = new COMMESSE();
+
+        C.FatturatoCommesse(ddlCom.SelectedValue.ToString());
+        graficoCommesse.DataBind();
+        grigliaCommesse.DataBind();
+    }
 }

@@ -92,6 +92,16 @@ public class COMMESSE
         DATABASE.query = "COMMESSE_SelectAll";
         dt = DATABASE.EseguiSPRead();
         return dt;
+    } 
+    
+    public DataTable FatturatoCommesse(string datac)
+    {
+        DATABASE.cmd.Parameters.Clear();
+        DataTable dt = new DataTable();
+        DATABASE.query = "FATTURATOCOMMESSE";
+        DATABASE.cmd.Parameters.AddWithValue("dataconsegna", datac);
+        dt = DATABASE.EseguiSPRead();
+        return dt;
     }
 
     /// <summary>

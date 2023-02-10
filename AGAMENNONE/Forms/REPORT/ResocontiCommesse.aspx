@@ -1,0 +1,16 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/MasterPage.master" AutoEventWireup="true" CodeFile="ResocontiCommesse.aspx.cs" Inherits="Forms_Default" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">    <style type="text/css">        .auto-style1 {            text-align: center;            height: 23px;        }    </style></asp:Content><asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">     <div class="container mt-5 py-5">        <table class="mt-5 d-flex justify-content-center align-items-center">            <tr>             <td colspan="3" class="auto-style1">                 <h3>Qui il fatturato per commesse</h3>             </td>               </tr>             <tr>                <td>                                                                    </td>                <td>                    <asp:DropDownList ID="ddlCom" runat="server" OnSelectedIndexChanged="ddlCom_SelectedIndexChanged" AutoPostBack="True" DataSourceID="sdsDDLCOMMESSE" DataTextField="DATACONSEGNA" DataValueField="DATACONSEGNA"></asp:DropDownList>
+                    <asp:SqlDataSource ID="sdsDDLCOMMESSE" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="Fatture_Ddl_Commesse" SelectCommandType="StoredProcedure"></asp:SqlDataSource>                </td>                <td></td>            </tr>            <tr>                <td class="justify-content-center align-items-center text-align-center">                    <p></p>                    <asp:Chart ID="graficoCommesse" runat="server" DataSourceID="sdsgrigliaCommesse">                        <Series>                            <asp:Series Name="Series1" XValueMember="SPESE" YValueMembers="DATACONSEGNA"></asp:Series>                        </Series>                        <ChartAreas>                            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>                        </ChartAreas>                    </asp:Chart>                </td>                <td style="width: 50px"></td>                <td class="justify-content-center align-items-center text-align-center">                    <asp:GridView ID="grigliaCommesse" runat="server" AutoGenerateColumns="False" DataSourceID="sdsgrigliaCommesse">
+                        <Columns>
+                            <asp:BoundField DataField="SPESE" HeaderText="SPESE" ReadOnly="True" SortExpression="SPESE" />
+                            <asp:BoundField DataField="DATACONSEGNA" HeaderText="DATACONSEGNA" SortExpression="DATACONSEGNA" />
+                        </Columns>
+                    </asp:GridView>                  
+                    
+                    <asp:SqlDataSource ID="sdsgrigliaCommesse" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="FATTURATOCOMMESSE" SelectCommandType="StoredProcedure">
+                        <SelectParameters>
+                            <asp:Parameter DbType="Date" Name="dataconsegna" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>                                    </td>            </tr>        </table>    </div></asp:Content>
+
