@@ -25,8 +25,8 @@ public partial class Forms_DIPENDENTI_InserisciDipendente : System.Web.UI.Page
         D.chiaveAzienda = int.Parse(ddlAzienda.SelectedValue.ToString());
         D.email = txtEmail.Text.Trim();
         D.password = txtPassword.Text.Trim();
-        D.abilitato = int.Parse(txtAbilitato.Text.Trim());
-        D.primoaccesso = int.Parse(txtPrimoAccesso.Text.Trim());
+        D.abilitato = bool.Parse(txtAbilitato.Text.Trim());
+        D.primoaccesso = bool.Parse(txtPrimoAccesso.Text.Trim());
         D.ruolo = txtRuolo.Text.Trim();
         D.cognome = txtCognome.Text.Trim();
         D.nome = txtNome.Text.Trim();

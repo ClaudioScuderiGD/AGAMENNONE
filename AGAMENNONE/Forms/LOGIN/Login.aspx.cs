@@ -32,21 +32,20 @@ public partial class Forms_Login : System.Web.UI.Page
         dt = D.Login();
 
         //se non esistono = messaggio "Email o password sbagliati"
-        if (int.Parse(dt.Rows[0]["TROVATO"].ToString()) == 0)
-        {
+        if (dt.Rows.Count == 0) { 
             ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Email o password sbagliati');", true);
             return;
         }
 
         Session["chiave"] = dt.Rows[0]["chiave"].ToString();
-
-        if (dt.Rows[0]["PRIMOACCESSO"].ToString() == "1")
+        
+        if ((bool)dt.Rows[0]["PRIMOACCESSO"])
         {
             Response.Redirect("CambioPassword.aspx");
         }
         else
         {
-            Response.Redirect("Home.aspx");
+            Response.Redirect("../Home.aspx");
         }
     }
 }

@@ -61,8 +61,8 @@ public partial class Forms_DIPENDENTI_ModificaDipendente : System.Web.UI.Page
         D.chiave = Convert.ToInt32(chiavegriglia);
         D.email = txtEmail.Text.Trim();
         D.password = txtPassword.Text.Trim();
-        D.abilitato = int.Parse(txtAbilitato.Text.Trim());
-        D.primoaccesso = int.Parse(txtPrimoAccesso.Text.Trim());
+        D.abilitato = bool.Parse(txtAbilitato.Text.Trim());
+        D.primoaccesso = bool.Parse(txtPrimoAccesso.Text.Trim());
         D.ruolo = txtRuolo.Text.Trim();
         D.cognome = txtCognome.Text.Trim();
         D.nome = txtNome.Text.Trim();

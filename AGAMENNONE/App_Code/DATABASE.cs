@@ -45,7 +45,11 @@ public static class DATABASE
     {
         cmd.CommandText = query;
         cmd.CommandType = CommandType.Text;
+        if (conn.State == ConnectionState.Closed)
+        {
+
         conn.Open();
+        }
         cmd.ExecuteNonQuery();
         conn.Close();
     }
@@ -57,7 +61,11 @@ public static class DATABASE
     {
         cmd.CommandText = query;
         cmd.CommandType = CommandType.StoredProcedure;
-        conn.Open();
+        if (conn.State == ConnectionState.Closed)
+        {
+
+            conn.Open();
+        }
         cmd.ExecuteNonQuery();
         conn.Close();
     }

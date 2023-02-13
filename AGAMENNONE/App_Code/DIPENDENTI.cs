@@ -15,8 +15,8 @@ public class DIPENDENTI
     public int chiaveAzienda;
     public string email;
     public string password;
-    public int abilitato;
-    public int primoaccesso;
+    public bool abilitato;
+    public bool primoaccesso;
     public string ruolo;
     public string cognome;
     public string nome;
@@ -25,7 +25,7 @@ public class DIPENDENTI
     public string cap;
     public string provincia;
     public string telefono;
-    public int costoorario;
+    public double costoorario;
     public string datainiziorapporto;
     public string datafinerapporto;
 
@@ -64,7 +64,7 @@ public class DIPENDENTI
         DATABASE.query = "DIPENDENTI_Registra";
         DATABASE.cmd.Parameters.AddWithValue("chiaveAzienda", chiaveAzienda);
         DATABASE.cmd.Parameters.AddWithValue("email", email);
-        DATABASE.cmd.Parameters.AddWithValue("password", password);
+        DATABASE.cmd.Parameters.AddWithValue("PWD", password);
         DATABASE.cmd.Parameters.AddWithValue("cognome", cognome);
         DATABASE.cmd.Parameters.AddWithValue("nome", nome);
         DATABASE.cmd.Parameters.AddWithValue("indirizzo", indirizzo);
@@ -97,7 +97,7 @@ public class DIPENDENTI
         DATABASE.cmd.Parameters.Clear();
         DATABASE.query = "DIPENDENTI_CambioPassword";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
-        DATABASE.cmd.Parameters.AddWithValue("password", password);
+        DATABASE.cmd.Parameters.AddWithValue("PWD", password);
         DATABASE.EseguiSPNonRead();
     }
 
@@ -109,7 +109,7 @@ public class DIPENDENTI
         DATABASE.cmd.Parameters.Clear();
         DataTable dt = new DataTable();
         DATABASE.query = "DIPENDENTI_EmailEsistente";
-        DATABASE.cmd.Parameters.AddWithValue("email", password);
+        DATABASE.cmd.Parameters.AddWithValue("email", email);
         DATABASE.EseguiSPRead();
         return dt;
     }
@@ -122,7 +122,7 @@ public class DIPENDENTI
         DATABASE.cmd.Parameters.Clear();
         DATABASE.query = "DIPENDENTI_Insert";
         DATABASE.cmd.Parameters.AddWithValue("email", email);
-        DATABASE.cmd.Parameters.AddWithValue("password", password);
+        DATABASE.cmd.Parameters.AddWithValue("PWD", password);
         DATABASE.cmd.Parameters.AddWithValue("abilitato", abilitato);
         DATABASE.cmd.Parameters.AddWithValue("primoaccesso", primoaccesso);
         DATABASE.cmd.Parameters.AddWithValue("ruolo", ruolo);
@@ -148,7 +148,7 @@ public class DIPENDENTI
         DATABASE.query = "DIPENDENTI_Update";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
         DATABASE.cmd.Parameters.AddWithValue("email", email);
-        DATABASE.cmd.Parameters.AddWithValue("password", password);
+        DATABASE.cmd.Parameters.AddWithValue("PWD", password);
         DATABASE.cmd.Parameters.AddWithValue("abilitato", abilitato);
         DATABASE.cmd.Parameters.AddWithValue("primoaccesso", primoaccesso);
         DATABASE.cmd.Parameters.AddWithValue("ruolo", ruolo);
