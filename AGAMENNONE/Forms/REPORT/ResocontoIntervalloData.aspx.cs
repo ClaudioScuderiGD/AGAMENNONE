@@ -11,4 +11,13 @@ public partial class Forms_Default : System.Web.UI.Page
     {
 
     }
+
+    protected void btnCarica_Click(object sender, EventArgs e)
+    {
+        FATTURE F = new FATTURE();
+
+        F.SelectDate_Interval(txtDataInizio.Text, txtDataFine.Text);
+        graficoIntervallo.DataBind();
+        grigliaIntervallo.DataBind();
+    }
 }

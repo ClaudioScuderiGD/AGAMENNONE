@@ -15,12 +15,12 @@
                     <asp:Label ID="Label1" runat="server" Text="Label">Da:</asp:Label>
                     <asp:TextBox ID="txtDataInizio" runat="server" TextMode="Date"></asp:TextBox>
                 </td>
-                <td style="width: 20px">
+                <td>
                     <asp:Label ID="Label2" runat="server" Text="Label">A:</asp:Label>
                     <asp:TextBox ID="txtDataFine" runat="server" TextMode="Date"></asp:TextBox>
                 </td>
-                <td>
-                    <asp:Button ID="btnCarica" runat="server" Text="Carica" />
+                <td style="margin-left: 20px">
+                    <asp:Button ID="btnCarica" runat="server" Text="Carica" OnClick="btnCarica_Click" />
                 </td>
             </tr>
             <tr>
@@ -28,7 +28,7 @@
                     <p></p>
                     <asp:Chart ID="graficoIntervallo" runat="server" DataSourceID="sdsGraficoIntervallo">
                         <Series>
-                            <asp:Series Name="Series1" ></asp:Series>
+                            <asp:Series Name="Series1" XValueMember="DATAFATTURA" YValueMembers="TOTALEVENDITE" ></asp:Series>
                         </Series>
                         <ChartAreas>
                             <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
@@ -43,9 +43,10 @@
                 </td>
                 <td style="width: 50px"></td>
                 <td class="justify-content-center align-items-center text-align-center">
-                    <asp:GridView ID="grigliaIntervallo" runat="server" AutoGenerateColumns="False" DataSourceID="sdsGrigliaIntervallo">
+                    <asp:GridView ID="grigliaIntervallo" runat="server" AutoGenerateColumns="False" DataSourceID="sdsGraficoIntervallo">
                         <Columns>
-                           
+                            <asp:BoundField DataField="TOTALEVENDITE" HeaderText="TOTALEVENDITE" ReadOnly="True" SortExpression="TOTALEVENDITE" />
+                            <asp:BoundField DataField="DATAFATTURA" HeaderText="DATAFATTURA" SortExpression="DATAFATTURA" />
                         </Columns>
                     </asp:GridView>
                     <asp:SqlDataSource runat="server" ID="sdsGrigliaIntervallo" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="FATTURE_SelectDate_Interval" SelectCommandType="StoredProcedure">
