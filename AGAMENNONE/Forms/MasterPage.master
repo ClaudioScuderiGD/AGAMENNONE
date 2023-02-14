@@ -28,7 +28,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="EntrateTotali.aspx">Resoconti totali</a>
                             <a class="dropdown-item" href="/Forms/REPORT/ResocontoAnnuale.aspx">Resoconti annuali</a>
-                            <a class="dropdown-item" href="/Forms/REPORT/ResocontoMensile.aspx">Resoconti mensili</a>                            <a class="dropdown-item" href="/Forms/REPORT/ResocontoDipendente.aspx">Resoconti dipendente</a>                            <a class="dropdown-item" href="/Forms/REPORT/ResocontoCommessa.aspx">Resoconti commessa</a>                        </div>
+                            <a class="dropdown-item" href="/Forms/REPORT/ResocontoMensile.aspx">Resoconti mensili</a>                            <a class="dropdown-item" href="/Forms/REPORT/ResocontoDipendente.aspx">Resoconti dipendente</a>                            <a class="dropdown-item" href="/Forms/REPORT/ResocontoCommessa.aspx">Resoconti commessa</a>                            <a class="dropdown-item" href="/Forms/REPORT/ResocontoIntervalloData.aspx">Resoconti intervallo data</a>                        </div>
                     </div>
                     <div class="dropdown">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Logs</a>
