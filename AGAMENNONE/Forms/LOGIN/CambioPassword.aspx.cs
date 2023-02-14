@@ -33,6 +33,6 @@ public partial class Forms_CambioPassword : System.Web.UI.Page
         D.password = C.Crypta(txtNuovaPWD.Text.Trim());
         D.chiave = int.Parse(varSession);
         D.CambioPassword();
-        Response.Redirect("Home.aspx");
+        Response.Redirect("/Forms/Home.aspx");
     }
 }

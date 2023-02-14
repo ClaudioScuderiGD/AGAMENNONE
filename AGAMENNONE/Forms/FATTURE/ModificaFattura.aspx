@@ -20,7 +20,7 @@
                     <label class="label" style="width: 30%">Numero Fattura:</label>
                 </div>
                 <div class="col-md-10">
-                    <asp:TextBox ID="txtNumFattura" runat="server" Width="65%" MaxLength="10"></asp:TextBox>
+                    <asp:TextBox ID="txtNumFattura" runat="server" Width="65%" MaxLength="10" ></asp:TextBox>
                 </div>
             </div>
         

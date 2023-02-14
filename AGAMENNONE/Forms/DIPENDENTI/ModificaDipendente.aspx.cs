@@ -29,7 +29,7 @@ public partial class Forms_DIPENDENTI_ModificaDipendente : System.Web.UI.Page
             dt = D.SelectByKey();
 
             txtEmail.Text = dt.Rows[0]["email"].ToString();
-            txtPassword.Text = dt.Rows[0]["password"].ToString();
+            txtPassword.Text = dt.Rows[0]["PWD"].ToString();
             txtAbilitato.Text = dt.Rows[0]["abilitato"].ToString();
             txtPrimoAccesso.Text = dt.Rows[0]["primoaccesso"].ToString();
             txtRuolo.Text = dt.Rows[0]["ruolo"].ToString();

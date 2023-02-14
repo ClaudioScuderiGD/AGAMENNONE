@@ -41,11 +41,11 @@ public partial class Forms_Login : System.Web.UI.Page
         
         if ((bool)dt.Rows[0]["PRIMOACCESSO"])
         {
-            Response.Redirect("CambioPassword.aspx");
+            Response.Redirect("/Forms/LOGIN/CambioPassword.aspx");
         }
         else
         {
-            Response.Redirect("../Home.aspx");
+            Response.Redirect("/Forms/Home.aspx");
         }
     }
 }

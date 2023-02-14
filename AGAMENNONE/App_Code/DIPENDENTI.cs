@@ -97,7 +97,7 @@ public class DIPENDENTI
         DATABASE.cmd.Parameters.Clear();
         DATABASE.query = "DIPENDENTI_CambioPassword";
         DATABASE.cmd.Parameters.AddWithValue("chiave", chiave);
-        DATABASE.cmd.Parameters.AddWithValue("PWD", password);
+        DATABASE.cmd.Parameters.AddWithValue("password", password);
         DATABASE.EseguiSPNonRead();
     }
 
