@@ -24,12 +24,18 @@ public partial class Forms_Login : System.Web.UI.Page
             return;
         }
 
-        DIPENDENTI D = new DIPENDENTI();
         Crypt C = new Crypt();
-        D.email = txtEmail.Text.Trim();
-        D.password = C.Crypta(txtPWD.Text.Trim());
+        RIFLOGIN.WSloginSoapClient L = new RIFLOGIN.WSloginSoapClient();
+
         DataTable dt = new DataTable();
-        dt = D.Login();
+        dt = L.Login(txtEmail.Text.Trim(), C.Crypta(txtPWD.Text.Trim()));
+
+
+        //DIPENDENTI D = new DIPENDENTI();
+        //D.email = txtEmail.Text.Trim();
+        //D.password = C.Crypta(txtPWD.Text.Trim());
+        //DataTable dt = new DataTable();
+        //dt = D.Login();
 
         //se non esistono = messaggio "Email o password sbagliati"
         if (dt.Rows.Count == 0) { 
